@@ -4,8 +4,14 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Renard Commerce — Komt binnenkort</title>
+
   <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
     body {
       min-height: 100vh;
       display: flex;
@@ -13,16 +19,25 @@
       justify-content: center;
       background: #0a0a0a;
       color: #f5f5f5;
-      font-family: 'Georgia', serif;
+      font-family: Georgia, serif;
     }
-    .wrapper { text-align: center; padding: 2rem; }
+
+    .wrapper {
+      text-align: center;
+      padding: 2rem;
+    }
+
     .wordmark {
       font-size: clamp(2rem, 6vw, 4rem);
       font-weight: 400;
       letter-spacing: 0.08em;
       color: #fff;
     }
-    .wordmark span { color: #c8a97e; }
+
+    .wordmark span {
+      color: #c8a97e;
+    }
+
     .tagline {
       margin-top: 1.25rem;
       font-size: clamp(0.9rem, 2.5vw, 1.1rem);
@@ -30,19 +45,23 @@
       text-transform: uppercase;
       color: #888;
     }
-    .divider {
-      width: 40px;
-      height: 1px;
-      background: #c8a97e;
-      margin: 2rem auto;
-    }
-    .sub { font-size: 0.85rem; color: #555; letter-spacing: 0.1em; }
   </style>
 </head>
+
 <body>
   <div class="wrapper">
     <div class="wordmark">Renard <span>Commerce</span></div>
     <div class="tagline">Komt binnenkort</div>
   </div>
+
+  <script>
+    const host = window.location.hostname.toLowerCase();
+
+    if (host.includes("rcchoice.") || host.includes("rc-choice.")) {
+      document.title = "RC Choice — Komt binnenkort";
+      document.querySelector(".wordmark").innerHTML =
+        'RC <span>Choice</span>';
+    }
+  </script>
 </body>
 </html>
