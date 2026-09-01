@@ -50,17 +50,32 @@
 
 <body>
   <div class="wrapper">
-    <div class="wordmark">Renard <span>Commerce</span></div>
-    <div class="tagline">Komt binnenkort</div>
+    <div class="wordmark" id="brand">
+      Renard <span>Commerce</span>
+    </div>
+
+    <div class="tagline">
+      Komt binnenkort
+    </div>
   </div>
 
   <script>
     const host = window.location.hostname.toLowerCase();
 
-    if (host.includes("rcchoice.") || host.includes("rc-choice.")) {
+    const isRcChoice =
+      host === "rcchoice.nl" ||
+      host === "www.rcchoice.nl" ||
+      host === "rcchoice.com" ||
+      host === "www.rcchoice.com" ||
+      host === "rc-choice.nl" ||
+      host === "www.rc-choice.nl" ||
+      host === "rc-choice.com" ||
+      host === "www.rc-choice.com";
+
+    if (isRcChoice) {
       document.title = "RC CHOICE — Komt binnenkort";
-      document.querySelector(".wordmark").innerHTML =
-        'RC <span>Choice</span>';
+      document.getElementById("brand").innerHTML =
+        'RC <span>CHOICE</span>';
     }
   </script>
 </body>
